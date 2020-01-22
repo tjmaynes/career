@@ -1,0 +1,32 @@
+#+TITLE: Career
+#+AUTHOR: TJ Maynes <tj@tjmaynes.com>
+
+[[https://circleci.com/gh/tjmaynes/career/tree/master][file:https://circleci.com/gh/tjmaynes/career/tree/master.svg?style=svg]]
+
+** Requirements
+- [[https://www.overleaf.com/learn/latex/XeLaTeX][XeLaTeX]]
+
+** Usage
+
+To compile your career files, run the following command:
+#+begin_src bash
+make build
+#+end_src
+
+To check the current version of LaTeX, run the following command:
+#+begin_src bash
+make check_version
+#+end_src
+
+To build the =docker= image, run the following command:
+#+begin_src bash
+TAG=<some-build-tag> \
+make build_image
+#+end_src
+
+To push the =docker= image to dockerhub, run the following command:
+#+begin_src bash
+REGISTRY_PASSWORD=<some-registry-password> \
+TAG=<some-build-tag> \
+make push_image
+#+end_src
