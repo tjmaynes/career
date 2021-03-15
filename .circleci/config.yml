@@ -36,10 +36,10 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: main
       - publish:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: main
