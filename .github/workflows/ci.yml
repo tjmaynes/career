@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!release'
+
+jobs:
+  ship_it:
+    runs-on: ubuntu-20.04
+    container:
+      image: tjmaynes/career-builder:latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: 🚀 Build Career files 🚀
+        run: make build
+        env:
+          GIT_USERNAME: tjmaynes-bot
+          GIT_EMAIL: tj+bot@tjmaynes.com
+          GIT_COMMIT_SHA: ${{ github.sha }}
+          TARGET_BRANCH: release
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest
+          prerelease: false
+          files: |
+            LICENSE
+            build/*.pdf
+
+
