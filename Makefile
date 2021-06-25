@@ -11,6 +11,8 @@ build: clean
 clean:
 	rm -rf build/
 
+deploy: build
+
 build_image:
 	./scripts/build_image.sh $(REGISTRY_USERNAME) $(IMAGE_NAME) $(TAG)
 
