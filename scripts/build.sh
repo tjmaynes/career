@@ -2,26 +2,30 @@
 
 set -e
 
-DESTINATION_DIRECTORY=$1
+DESTINATION_DIRECTORY=build
 
-if [ -z $DESTINATION_DIRECTORY ]; then
+function check_requirements() {
+  if [[ -z "$DESTINATION_DIRECTORY" ]]; then
     echo "Please provide a destination directory to copy files to."
     exit 1
-fi
-
-[ -d $DESTINATION_DIRECTORY ] || mkdir -p $DESTINATION_DIRECTORY
+  fi
+}
 
 function build()
 {
-    FILES=(cv resume)
-
-    cd src/
-    
-    for file in "${FILES[@]}"; do
-    echo "Compiling LaTeX file $file to directory $DESTINATION_DIRECTORY"
-	xelatex -output-directory=$DESTINATION_DIRECTORY $file.tex
-	rm -rf $DESTINATION_DIRECTORY/$file.log
-    done
+  pushd src
+  FILES=(cv resume)
+  for file in "${FILES[@]}"; do
+    echo "Compiling '$file' file to directory $DESTINATION_DIRECTORY"
+    pdflatex $file.tex
+    rm -rf $DESTINATION_DIRECTORY/$file.log
+  done
+  popd
 }
 
-build
+function main() {
+  check_requirements
+  build
+}
+
+main
