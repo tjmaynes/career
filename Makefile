@@ -4,8 +4,12 @@ REGISTRY_PASSWORD    ?= ""
 IMAGE_NAME           = career-builder
 TAG                  = latest
 
-build:
+.PHONY: build
+build: clean
 	./scripts/build.sh
+
+clean:
+	rm -rf build/
 
 build_image:
 	./scripts/build_image.sh $(REGISTRY_USERNAME) $(IMAGE_NAME) $(TAG)

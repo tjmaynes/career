@@ -13,14 +13,12 @@ function check_requirements() {
 
 function build()
 {
-  pushd src
   FILES=(cv resume)
   for file in "${FILES[@]}"; do
     echo "Compiling '$file' file to directory $DESTINATION_DIRECTORY"
-    pdflatex $file.tex
+    xetex -output-directory=$DESTINATION_DIRECTORY $file.tex
     rm -rf $DESTINATION_DIRECTORY/$file.log
   done
-  popd
 }
 
 function main() {
