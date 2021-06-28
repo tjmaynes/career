@@ -13,9 +13,9 @@ To compile LaTeX files, run the following command:
 make build
 ```
 
-To ship the latest artifacts, run the following command:
+To deploy the latest artifacts, run the following command:
 ```bash
-make ship_it
+make deploy 
 ```
 
 To build the =docker= image, run the following command:
