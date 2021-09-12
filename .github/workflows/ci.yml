@@ -14,6 +14,21 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: 🚀 Deploy 🚀
         run: nix-shell --run "make deploy"
+      - name: ⏰ Bump version and push tag ⏰
+        uses: anothrNick/github-tag-action@master
+        id: tag-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_OWNER: tjmaynes
+          WITH_V: true
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ steps.tag-action.outputs.tag }}
+          prerelease: false
+          files: |
+            LICENSE
+            *.pdf
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
