@@ -17,16 +17,3 @@ To deploy the latest artifacts, run the following command:
 ```bash
 make deploy 
 ```
-
-To build the =docker= image, run the following command:
-```bash
-TAG=<some-build-tag> \
-make build_image
-```
-
-To push the =docker= image to dockerhub, run the following command:
-```bash
-REGISTRY_PASSWORD=<some-registry-password> \
-TAG=<some-build-tag> \
-make push_image
-```
