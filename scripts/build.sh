@@ -1,9 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
-function main()
-{
+function main() {
   FILES=(cv resume)
   for file in "${FILES[@]}"; do
     echo "Compiling '$file' file..."
