@@ -3,12 +3,16 @@
 set -e
 
 function main() {
-  FILES=(cv resume)
-  for file in "${FILES[@]}"; do
-    echo "Compiling '$file' file..."
-    xelatex $file.tex
-    rm -rf $file.log
-  done
+  if [[ -z "$FILE" ]]; then
+    echo "Please pass an argument for 'FILE'"
+    exit 1
+  fi
+
+  echo "Compiling '$FILE' file..."
+
+  xelatex $FILE.tex
+
+  rm -rf $FILE.log $FILE.aux $FILE.out
 }
 
 main
