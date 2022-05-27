@@ -2,6 +2,8 @@
 
 set -e
 
+FILE=$1
+
 function main() {
   if [[ -z "$FILE" ]]; then
     echo "Please pass an argument for 'FILE'"
