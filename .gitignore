@@ -1,2 +1,9 @@
 # Auto-Generated
 *.pdf
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+
+# Macos
+.DS_Store
