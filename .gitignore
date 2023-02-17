@@ -4,6 +4,7 @@
 *.fdb_latexmk
 *.fls
 *.log
+*.xdv
 
 # Macos
 .DS_Store
