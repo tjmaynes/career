@@ -3,22 +3,23 @@
 \RequirePackage{import}
 \usepackage{import}
 
-\subimport{components/}{preamble}
-\subimport{components/}{style}
+\subimport{src/}{preamble}
+\subimport{src/}{style}
 
 \begin{document}
 
 \moveleft.5\hoffset\centerline{\huge TJ Maynes}
-\subimport{components/}{info}
+\subimport{src/}{info}
 
 \begin{section}{Professional Experience}
-  \subimport{components/}{experience-all}
+  \subimport{src/experience}{all}
 \end{section}
 
-\subimport{components/}{skills}
-\subimport{components/}{certificates}
-\subimport{components/}{education}
-\subimport{components/}{production-experience}
-\subimport{components/}{organizations}
+\subimport{src/}{skills}
+\subimport{src/}{certificates}
+\subimport{src/}{education}
+\subimport{src/experience}{production}
+\subimport{src/}{organizations}
+% \subimport{src/}{projects}
 
 \end{document}
