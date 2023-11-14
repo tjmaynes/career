@@ -3,21 +3,23 @@
 \RequirePackage{import}
 \usepackage{import}
 
-\subimport{components/}{preamble}
-\subimport{components/}{style}
+\subimport{src/}{preamble}
+\subimport{src/}{style}
 
 \begin{document}
 
 \moveleft.5\hoffset\centerline{\huge TJ Maynes}
-\subimport{components/}{info}
-\subimport{components/}{objective}
+\subimport{src/}{info}
+\subimport{src/}{objective}
 \begin{section}{Professional Experience}
-  \subimport{components/}{experience-indebted}
-  \subimport{components/}{experience-pivotal-labs}
-  \subimport{components/}{experience-nbcuniversal}
-  \subimport{components/}{experience-rejuvenan}
+  \subimport{src/experience}{kohls}
+  \subimport{src/experience}{indebted}
+  \subimport{src/experience}{pivotal-labs}
+  \subimport{src/experience}{nbcuniversal}
+  \subimport{src/experience}{rejuvenan}
+  \subimport{src/experience}{spatial-networks}
 \end{section}
-\subimport{components/}{skills}
-\subimport{components/}{certificates}
-\subimport{components/}{education}
+\subimport{src/}{skills}
+\subimport{src/}{certificates}
+\subimport{src/}{education}
 \end{document}
