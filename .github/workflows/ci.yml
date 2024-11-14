@@ -6,14 +6,20 @@ on:
       - '!release'
 jobs:
   ship_it:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: cachix/install-nix-action@v13
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile CV document
+        uses: xu-cheng/latex-action@v3
         with:
-          nix_path: nixpkgs=channel:nixos-unstable
-      - name: 🚀 Deploy 🚀
-        run: nix-shell --run "make deploy"
+          root_file: cv.tex
+          latexmk_use_xelatex: true
+      - name: Compile resume document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          latexmk_use_xelatex: true
       - name: ⏰ Bump version and push tag ⏰
         uses: anothrNick/github-tag-action@master
         id: tag-action

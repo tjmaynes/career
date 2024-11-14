@@ -1,12 +1,12 @@
 .PHONY: build
 build: clean
-	./scripts/build.sh "cv"
-	./scripts/build.sh "resume"
+	xelatex cv.tex
+	xelatex resume.tex
 
 resign: clean
 	./scripts/build-resignation-pdf.sh
 
 clean:
-	rm -rf build/
+	rm -rf build
+	rm -f *.log *.pdf
 
-deploy: build

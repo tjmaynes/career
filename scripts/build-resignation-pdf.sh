@@ -9,16 +9,16 @@ WHY=$4
 
 function check_requirements() {
   if [[ -z "$CURRENT_MANAGER" ]]; then
-    echo "Please pass an argument for 'CURRENT_MANAGER'"
+    echo "Please pass an argument for 'CURRENT_MANAGER'..."
     exit 1
   elif [[ -z "$COMPANY" ]]; then
-    echo "Please pass an argument for 'COMPANY'"
+    echo "Please pass an argument for 'COMPANY'..."
     exit 1
   elif [[ -z "$END_DATE" ]]; then
-    echo "Please pass an argument for 'END_DATE'"
+    echo "Please pass an argument for 'END_DATE'..."
     exit 1
   elif [[ -z "$WHY" ]]; then
-    echo "Please pass an argument for 'WHY'"
+    echo "Please pass an argument for 'WHY'..."
     exit 1
   fi
 }

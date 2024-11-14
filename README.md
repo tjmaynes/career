@@ -1,6 +1,6 @@
 # Career
 
-> CV/Resume.
+> My CV and resume written in LaTeX
 
 ## Requirements
 
@@ -8,12 +8,7 @@
 
 ## Usage
 
-To compile LaTeX files, run the following command:
+To build the project, run the following command:
 ```bash
 make build
-```
-
-To deploy the latest artifacts, run the following command:
-```bash
-make deploy 
 ```
