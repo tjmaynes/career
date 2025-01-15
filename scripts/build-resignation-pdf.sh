@@ -32,7 +32,7 @@ function main() {
   sed -i "s/%{COMPANY}%/${COMPANY}/g" new-resignation.tex
   sed -i "s/%{END_DATE}%/${END_DATE}/g" new-resignation.tex
   sed -i "s/%{WHY}%/${WHY}/g" new-resignation.tex
-	
+
   ./scripts/build.sh "new-resignation"
 
   rm -rf new-resignation.tex
