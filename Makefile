@@ -1,7 +1,7 @@
 .PHONY: build
 build: clean
-	xelatex cv.tex
-	xelatex resume.tex
+	pdflatex cv.tex
+	pdflatex resume.tex
 
 resign: clean
 	./scripts/build-resignation-pdf.sh
